@@ -27,11 +27,19 @@ export const query = graphql`
   query Posts {
     allPostsYaml {
       nodes {
-        id
         date
-        image
+        id
         title
         url
+        image {
+          base {
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -30,7 +30,20 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
-    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-transformer-yaml-full`,
+      options: {
+        path: `./src/posts`,
+        plugins: [
+          {
+            resolve: `gatsby-yaml-full-file`,
+            options: {
+              path: './src/images',
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
