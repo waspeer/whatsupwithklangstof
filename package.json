@@ -57,7 +57,8 @@
     "code:clean": "yarn code:lint --fix; yarn code:format --write",
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
     "code:format": "prettier './src/**/**.{js,jsx,ts,tsx}'",
-    "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+    "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "types:generate": "apollo codegen:generate src/types/__generated__/ -c=apollo-config.js  --outputFlat --target=typescript"
   },
   "repository": {
     "type": "git",
