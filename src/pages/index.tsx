@@ -3,6 +3,7 @@ import React from 'react';
 
 import Layout from '#components/Layout';
 import SEO from '#components/Seo';
+import PostList from '#components/PostList';
 import { Posts as IData } from '#types/__generated__/Posts';
 
 interface Props {
@@ -14,14 +15,10 @@ const IndexPage = ({ data }: Props) => {
     allPostsYaml: { nodes: posts },
   } = data;
 
-  console.log(posts);
-
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+      <PostList posts={posts} />
     </Layout>
   );
 };
@@ -31,9 +28,10 @@ export const query = graphql`
     allPostsYaml {
       nodes {
         id
-        title
-        image
         date
+        image
+        title
+        url
       }
     }
   }

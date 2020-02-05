@@ -9,9 +9,10 @@
 export interface Posts_allPostsYaml_nodes {
   __typename: "PostsYaml";
   id: string;
-  title: string | null;
-  image: string | null;
   date: string | null;
+  image: string | null;
+  title: string | null;
+  url: string | null;
 }
 
 export interface Posts_allPostsYaml {
