@@ -1,51 +1,56 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from 'react';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import styledTheme from 'styled-theming';
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import Logo from '#components/Logo';
+import { useDayNight } from '#lib/hooks';
 
-import Header from "./header"
-import "./layout.css"
+const backgroundColor = styledTheme('mode', {
+  light: '#fff2d3',
+  dark: '#559cd6',
+});
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const theme = {
+  backgroundColor,
+  primary: '#ff88d9',
+  secondary: '#00feff',
+  neutral: '#ffe000',
+};
+
+interface GlobalProps {
+  theme: typeof theme;
+}
+
+const GlobalStyle = createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+
+  body, html {
+    background-color: ${({ theme }: GlobalProps) => theme.backgroundColor};
+    font-family: "Source Sans Pro", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+`;
+
+interface Props {
+  children: JSX.Element[] | JSX.Element;
+}
+
+const Layout = ({ children }: Props) => {
+  const isDay = useDayNight();
+  const mode = isDay ? 'light' : 'dark';
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+    <ThemeProvider theme={{ ...theme, mode }}>
+      <GlobalStyle />
+      <Logo />
+      <main>{children}</main>
+    </ThemeProvider>
+  );
+};
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export default Layout;

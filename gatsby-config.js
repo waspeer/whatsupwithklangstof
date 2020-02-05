@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -39,7 +41,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-root-import`,
       options: {
-        "#components": "./src/components",
+        '#components': path.join(__dirname, 'src/components'),
+        '#lib': path.join(__dirname, 'src/lib')
       },
     },
   ],

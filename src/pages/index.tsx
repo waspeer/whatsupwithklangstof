@@ -1,8 +1,7 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
 
-import Layout from "#components/Layout"
-import SEO from "#components/Seo"
+import Layout from '#components/Layout';
+import SEO from '#components/Seo';
 
 const IndexPage = () => (
   <Layout>
@@ -11,6 +10,6 @@ const IndexPage = () => (
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
