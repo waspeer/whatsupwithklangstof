@@ -1,4 +1,5 @@
 import React from 'react';
+import Image, { FluidObject } from 'gatsby-image';
 
 import { Posts_allPostsYaml_nodes as IPost } from '#types/__generated__/Posts';
 
@@ -7,7 +8,11 @@ interface Props {
 }
 
 const Post = ({ post }: Props) => {
-  return <div>{post.title}</div>;
+  const imageFluid = post.image?.base?.childImageSharp?.fluid;
+
+  const image = imageFluid ? <Image fluid={imageFluid as FluidObject} /> : <h1>No image!</h1>;
+
+  return <div>{image}</div>;
 };
 
 export default Post;
