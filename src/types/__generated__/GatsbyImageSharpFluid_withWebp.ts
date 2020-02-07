@@ -7,7 +7,7 @@
 // ====================================================
 
 export interface GatsbyImageSharpFluid_withWebp {
-  __typename: "ImageSharpFluid";
+  __typename: 'ImageSharpFluid';
   base64: string | null;
   aspectRatio: number;
   src: string;

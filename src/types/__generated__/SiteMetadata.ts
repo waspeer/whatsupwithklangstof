@@ -7,14 +7,14 @@
 // ====================================================
 
 export interface SiteMetadata_site_siteMetadata {
-  __typename: "SiteSiteMetadata";
+  __typename: 'SiteSiteMetadata';
   title: string | null;
   description: string | null;
   author: string | null;
 }
 
 export interface SiteMetadata_site {
-  __typename: "Site";
+  __typename: 'Site';
   siteMetadata: SiteMetadata_site_siteMetadata | null;
 }
 

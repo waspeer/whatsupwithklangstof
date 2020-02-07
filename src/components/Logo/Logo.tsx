@@ -13,7 +13,7 @@ const Logo = () => {
     text.push(
       <TextLayer key={i} data-depth={(i + 1) / FRICTION}>
         <LogoText>KLANGSTOF</LogoText>
-      </TextLayer>
+      </TextLayer>,
     );
   }
 

@@ -7,7 +7,7 @@
 // ====================================================
 
 export interface Posts_allPostsYaml_nodes_image_base_childImageSharp_fluid {
-  __typename: "ImageSharpFluid";
+  __typename: 'ImageSharpFluid';
   base64: string | null;
   aspectRatio: number;
   src: string;
@@ -18,22 +18,22 @@ export interface Posts_allPostsYaml_nodes_image_base_childImageSharp_fluid {
 }
 
 export interface Posts_allPostsYaml_nodes_image_base_childImageSharp {
-  __typename: "ImageSharp";
+  __typename: 'ImageSharp';
   fluid: Posts_allPostsYaml_nodes_image_base_childImageSharp_fluid | null;
 }
 
 export interface Posts_allPostsYaml_nodes_image_base {
-  __typename: "File";
+  __typename: 'File';
   childImageSharp: Posts_allPostsYaml_nodes_image_base_childImageSharp | null;
 }
 
 export interface Posts_allPostsYaml_nodes_image {
-  __typename: "PostsYamlImage";
+  __typename: 'PostsYamlImage';
   base: Posts_allPostsYaml_nodes_image_base | null;
 }
 
 export interface Posts_allPostsYaml_nodes {
-  __typename: "PostsYaml";
+  __typename: 'PostsYaml';
   date: string | null;
   id: string;
   title: string | null;
@@ -42,7 +42,7 @@ export interface Posts_allPostsYaml_nodes {
 }
 
 export interface Posts_allPostsYaml {
-  __typename: "PostsYamlConnection";
+  __typename: 'PostsYamlConnection';
   nodes: Posts_allPostsYaml_nodes[];
 }
 
