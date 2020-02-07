@@ -37,9 +37,6 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-yaml-full-file`,
-            options: {
-              path: './src/images',
-            },
           },
         ],
       },
