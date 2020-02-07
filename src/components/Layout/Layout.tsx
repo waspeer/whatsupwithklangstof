@@ -1,10 +1,16 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 import Logo from '#components/Logo';
 import { useDayNight } from '#lib/hooks';
 
 import { theme, GlobalStyle } from './_styles';
+
+const Wrapper = styled.main`
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 2rem;
+`;
 
 interface Props {
   children: JSX.Element[] | JSX.Element;
@@ -18,7 +24,7 @@ const Layout = ({ children }: Props) => {
     <ThemeProvider theme={{ ...theme, mode }}>
       <GlobalStyle />
       <Logo />
-      <main>{children}</main>
+      <Wrapper>{children}</Wrapper>
     </ThemeProvider>
   );
 };
