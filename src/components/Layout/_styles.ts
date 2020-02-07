@@ -25,6 +25,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Source Sans Pro", sans-serif;
   }
 
+  body {
+    overflow-x: hidden;
+  }
+
   h1,
   h2,
   h3 {

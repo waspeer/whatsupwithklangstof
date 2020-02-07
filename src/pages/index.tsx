@@ -25,7 +25,7 @@ const IndexPage = ({ data }: Props) => {
 
 export const query = graphql`
   query Posts {
-    allPostsYaml {
+    allPostsYaml(sort: { fields: date, order: DESC }) {
       nodes {
         date
         id
