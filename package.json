@@ -63,7 +63,7 @@
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx 'src/' 'test/'",
     "code:format": "prettier './{src,test}/**/**.{js,jsx,ts,tsx}'",
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "types:generate": "apollo codegen:generate src/types/__generated__/ -c=apollo-config.js  --outputFlat --target=typescript",
+    "graphql:generate-types": "apollo codegen:generate src/types/__generated__/ -c=apollo-config.js  --outputFlat --target=typescript",
     "cy:open": "cypress open",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
