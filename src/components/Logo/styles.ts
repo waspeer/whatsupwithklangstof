@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const LogoWrapper = styled.div`
-  background: ${({ theme }) => theme.primary};
+  background: ${({ theme }) => theme.colors.primary};
   font-weight: bold;
   font-style: italic;
   font-size: 50px;
@@ -25,12 +25,12 @@ export const TextLayer = styled.div`
   }
 
   &:nth-of-type(2) span {
-    color: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.colors.secondary};
     transform: translate(-3px, 3px);
   }
 
   &:nth-of-type(3) span {
-    color: ${({ theme }) => theme.neutral};
+    color: ${({ theme }) => theme.colors.neutral};
     transform: translate(-6px, 6px);
   }
 `;

@@ -19,7 +19,7 @@ export const TitleText = withTheme(styled.div`
   font-style: italic;
   font-weight: bold;
   text-align: center;
-  color: ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
   text-shadow: black 1px -1px;
 
   @media (max-width: 700px) {
