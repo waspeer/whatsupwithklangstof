@@ -31,8 +31,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@testing-library/cypress": "^5.3.0",
     "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.19",
+    "@types/react-helmet": "^5.0.15",
     "@types/styled-components": "^4.4.2",
     "@types/styled-theming": "^2.2.2",
     "babel-plugin-styled-components": "^1.10.7",
@@ -42,6 +44,7 @@
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-cypress": "^2.9.0",
     "eslint-plugin-import": "^2.20.0",
+    "gatsby-cypress": "^0.2.22",
     "poetic": "^1.4.0",
     "start-server-and-test": "^1.10.8",
     "typescript": "^3.7.5"
@@ -65,7 +68,8 @@
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "graphql:generate-types": "apollo codegen:generate src/types/__generated__/ -c=apollo-config.js  --outputFlat --target=typescript",
     "cy:open": "cypress open",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
+    "test:e2e:dev": "CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e": "CYPRESS_SUPPORT=y yarn build && start-server-and-test serve http://localhost:9000 cy:open"
   },
   "repository": {
     "type": "git",

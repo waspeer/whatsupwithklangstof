@@ -1,4 +1,3 @@
-import Tilt from 'react-tilt';
 import styled, { withTheme } from 'styled-components';
 
 export const TitleWrapper = styled.div`
@@ -27,11 +26,10 @@ export const TitleText = withTheme(styled.div`
   }
 `);
 
-export const Wrapper = styled(Tilt)`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100%;
   padding: 1.25rem;
   position: relative;
   transform-style: preserve-3d;

@@ -15,15 +15,21 @@ const Post = ({ post }: Props) => {
   const wrapperClasses = classnames({ 'no-image': !post.image });
 
   const PossibleLink = ({ children }: { children: JSX.Element | (JSX.Element | null)[] | null }) =>
-    post.url ? <a href={post.url}>{children}</a> : <>{children}</>;
+    post.url ? (
+      <a href={post.url} data-testid="post-link">
+        {children}
+      </a>
+    ) : (
+      <>{children}</>
+    );
 
   return (
-    <Wrapper className={wrapperClasses}>
+    <Wrapper className={wrapperClasses} data-testid="post">
       <PossibleLink>
         {post.image && <Image fluid={imageFluid as FluidObject} />}
         {post.title !== null ? (
           <TitleWrapper>
-            <TitleText>
+            <TitleText data-testid="post-title">
               <span>{post.title}</span>
             </TitleText>
           </TitleWrapper>
