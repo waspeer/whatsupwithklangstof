@@ -22,8 +22,8 @@ interface Props {
 const PostList = ({ posts }: Props) => {
   return (
     <Wrapper>
-      {posts.map((post) => (
-        <Post key={post.id} post={post} />
+      {posts.map((post: IPost) => (
+        <Post image={post.image} key={post.id} title={post.title} url={post.url} />
       ))}
     </Wrapper>
   );

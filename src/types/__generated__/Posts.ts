@@ -28,17 +28,17 @@ export interface Posts_allPostsYaml_nodes_image_base {
 }
 
 export interface Posts_allPostsYaml_nodes_image {
-  __typename: 'PostsYamlImage';
+  __typename: 'FileYaml';
   base: Posts_allPostsYaml_nodes_image_base | null;
 }
 
 export interface Posts_allPostsYaml_nodes {
   __typename: 'PostsYaml';
-  date: string | null;
+  date: any;
   id: string;
-  title: string | null;
-  url: string | null;
-  image: Posts_allPostsYaml_nodes_image | null;
+  title: string;
+  url: string;
+  image: Posts_allPostsYaml_nodes_image;
 }
 
 export interface Posts_allPostsYaml {
