@@ -17,7 +17,9 @@ describe('reading posts', () => {
             cy.request(url);
           });
 
-        cy.wrap(post[0].querySelector('.gatsby-image-wrapper')).should('exist');
+        cy.wrap(post[0])
+          .get('.gatsby-image-wrapper')
+          .should('exist');
 
         cy.findByTestId('post-title', { container: post }).should('exist');
       });
