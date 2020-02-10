@@ -1,10 +1,9 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 
 import Logo from '#components/Logo';
 import { useDayNight } from '#lib/hooks';
-
-import { theme, GlobalStyle } from './_styles';
+import { ThemeProvider, GlobalStyle } from '#lib/theme';
 
 const Wrapper = styled.main`
   max-width: 800px;
@@ -21,7 +20,7 @@ const Layout = ({ children }: Props) => {
   const mode = isDay ? 'light' : 'dark';
 
   return (
-    <ThemeProvider theme={{ ...theme, mode }}>
+    <ThemeProvider settings={{ mode }}>
       <GlobalStyle />
       <Logo />
       <Wrapper>{children}</Wrapper>
