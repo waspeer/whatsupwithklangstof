@@ -1,3 +1,4 @@
+import Tilt from 'react-parallax-tilt';
 import styled, { withTheme } from 'styled-components';
 
 export const TitleWrapper = styled.div`
@@ -26,7 +27,7 @@ export const TitleText = withTheme(styled.div`
   }
 `);
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Tilt)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,6 +43,7 @@ export const Wrapper = styled.div`
     opacity: 0;
     transform: scale(0.8) translateZ(0);
     transition: all 0.2s;
+    pointer-events: none;
   }
 
   :hover {
