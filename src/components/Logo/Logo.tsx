@@ -4,9 +4,10 @@ import { useParallax } from '#lib/hooks';
 
 import { LogoWrapper, TextLayer, LogoText } from './styles';
 
+const FRICTION = 14;
+
 const Logo = () => {
-  const FRICTION = 14;
-  const parallaxElement = useParallax();
+  const parallaxElement = useParallax<HTMLDivElement>();
 
   const text = [];
   for (let i = 0; i < 3; i += 1) {
