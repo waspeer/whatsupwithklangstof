@@ -36,7 +36,18 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run: yarn code:lint
-      - run: yarn test:unit
-      - run: yarn test:e2e
+      - run:
+          name: Linter
+          command: yarn code:lint
+
+      - run:
+          name: Unit tests
+          command: yarn test:unit
+
+      - run:
+          name: E2E tests
+          command: yarn test:e2e
+
+      - run:
+          name: Deployment
+          command: yarn surge
