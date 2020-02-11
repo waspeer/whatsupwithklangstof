@@ -78,9 +78,9 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "graphql:generate-types": "apollo codegen:generate src/types/__generated__/ -c=apollo-config.js  --outputFlat --target=typescript",
     "serve": "gatsby serve -p 8000",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "test:e2e:dev": "CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e": "CYPRESS_SUPPORT=y yarn build && start-server-and-test serve http://localhost:9000 cy:run",
+    "test:e2e": "CYPRESS_SUPPORT=y yarn build && start-server-and-test serve http://localhost:8000 cy:run",
     "test:unit": "jest"
   },
   "repository": {
