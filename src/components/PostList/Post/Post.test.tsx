@@ -3,48 +3,15 @@
 import React from 'react';
 import { cleanup, render, BoundFunction, GetByBoundAttribute } from '@testing-library/react';
 
-import { BreakpointContext } from '#lib/hooks';
-import { ThemeProvider } from '#lib/theme';
-import { Posts_allPostsYaml_nodes_image as IImage } from '#types/__generated__/Posts';
+import { imageMock, Providers } from '#lib/test';
 
 import Post from './Post';
 
-const imageMock: IImage = {
-  __typename: 'FileYaml',
-  base: {
-    __typename: 'File',
-    childImageSharp: {
-      __typename: 'ImageSharp',
-      fluid: {
-        __typename: 'ImageSharpFluid',
-        base64: 'base64',
-        aspectRatio: 1,
-        src: 'src',
-        srcSet: 'srcSet',
-        srcWebp: 'srcWebp',
-        srcSetWebp: 'srcSetWebp',
-        sizes: 'sizes',
-      },
-    },
-  },
-};
 const title = 'OMG BV';
 const url = 'http://omgbv.com';
 
 jest.mock('gatsby-image', () => 'test-gatsby-image');
 jest.mock('react-parallax-tilt', () => 'test-react-parallax-tilt');
-
-interface ProvidersProps {
-  breakpoint?: string;
-  children?: React.ReactNode;
-  mode?: 'light' | 'dark';
-}
-
-const Providers = ({ breakpoint = 'sm', children, mode = 'light' }: ProvidersProps) => (
-  <ThemeProvider settings={{ mode }}>
-    <BreakpointContext.Provider value={breakpoint}>{children}</BreakpointContext.Provider>
-  </ThemeProvider>
-);
 
 describe('Post', () => {
   let container: HTMLElement;
