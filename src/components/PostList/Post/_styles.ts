@@ -1,4 +1,4 @@
-import Tilt from 'react-parallax-tilt';
+import TiltElement from 'react-parallax-tilt';
 import styled, { withTheme } from 'styled-components';
 
 export const TitleWrapper = styled.div`
@@ -27,11 +27,16 @@ export const TitleText = withTheme(styled.div`
   }
 `);
 
-export const Wrapper = styled(Tilt)`
+export const Wrapper = styled.article`
+  padding: 1.25rem;
+  cursor: pointer;
+  outline: none;
+`;
+
+export const Tilt = styled(TiltElement)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1.25rem;
   position: relative;
   transform-style: preserve-3d;
 

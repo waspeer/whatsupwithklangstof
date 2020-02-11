@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Posts_allPostsYaml_nodes_image as IImage } from '#types/__generated__/Posts';
 
-import { TitleText, TitleWrapper, Wrapper } from './_styles';
+import { Tilt, TitleText, TitleWrapper, Wrapper } from './_styles';
 
 interface Props {
   image: IImage;
@@ -14,16 +14,20 @@ interface Props {
 const Post = ({ image, title, url }: Props) => {
   const imageFluid = image?.base?.childImageSharp?.fluid ?? null;
 
+  const handleClick = () => {
+    if (window) window.open(url, '_self');
+  };
+
   return (
-    <Wrapper className="post" gyroscope>
-      <a href={url} data-testid="post-link">
+    <Wrapper data-testid="post" data-href={url} onClick={handleClick} tabIndex={0} role="link">
+      <Tilt gyroscope>
         {imageFluid && <Image fluid={imageFluid as FluidObject} />}
-      </a>
-      <TitleWrapper>
-        <TitleText data-testid="post-title">
-          <span>{title}</span>
-        </TitleText>
-      </TitleWrapper>
+        <TitleWrapper>
+          <TitleText data-testid="post-title">
+            <span>{title}</span>
+          </TitleText>
+        </TitleWrapper>
+      </Tilt>
     </Wrapper>
   );
 };

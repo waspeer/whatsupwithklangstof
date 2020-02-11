@@ -7,12 +7,11 @@ describe('reading posts', () => {
   });
 
   it('displays posts on the page with image, title and working links', () => {
-    cy.get('.post')
+    cy.findAllByTestId('post')
       .should('have.length.gt', 0)
       .each((post) => {
-        cy.findByTestId('post-link', { container: post })
-          .should('exist')
-          .should('have.attr', 'href')
+        cy.wrap(post)
+          .should('have.attr', 'data-href')
           .then((url) => {
             cy.request(url);
           });
