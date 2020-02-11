@@ -56,5 +56,6 @@ module.exports = {
         '#types': path.join(__dirname, 'src/types'),
       },
     },
+    'gatsby-plugin-styled-components',
   ],
 };
