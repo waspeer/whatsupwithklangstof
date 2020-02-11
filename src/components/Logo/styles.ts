@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled.h1`
   background: ${({ theme }) => theme.colors.primary};
   font-weight: bold;
   font-style: italic;

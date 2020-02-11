@@ -27,7 +27,7 @@ export const TitleText = withTheme(styled.div`
   }
 `);
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.div`
   padding: 1.25rem;
   cursor: pointer;
   outline: none;

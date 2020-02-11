@@ -25,7 +25,9 @@ const Layout = ({ children }: Props) => {
       <ThemeProvider settings={{ mode }}>
         <BreakpointProvider>
           <GlobalStyle />
-          <Logo />
+          <header>
+            <Logo />
+          </header>
           <Wrapper>{children}</Wrapper>
         </BreakpointProvider>
       </ThemeProvider>
