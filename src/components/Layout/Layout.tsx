@@ -1,4 +1,5 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import styled from 'styled-components';
 
 import Logo from '#components/Logo';
@@ -20,13 +21,15 @@ const Layout = ({ children }: Props) => {
   const mode = isDay ? 'light' : 'dark';
 
   return (
-    <ThemeProvider settings={{ mode }}>
-      <BreakpointProvider>
-        <GlobalStyle />
-        <Logo />
-        <Wrapper>{children}</Wrapper>
-      </BreakpointProvider>
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider settings={{ mode }}>
+        <BreakpointProvider>
+          <GlobalStyle />
+          <Logo />
+          <Wrapper>{children}</Wrapper>
+        </BreakpointProvider>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 };
 
