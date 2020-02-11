@@ -6,6 +6,9 @@ module.exports = {
     'comma-dangle': ['warn', 'always-multiline'],
     semi: ['warn', 'always'],
     'object-curly-spacing': ['warn', 'always'],
+    quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: false }],
+    'no-useless-constructor': 'off',
+    '@typescript-eslint/no-useless-constructor': 'error',
   },
   settings: {
     'import/resolver': {

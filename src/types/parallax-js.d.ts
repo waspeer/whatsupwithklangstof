@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 declare module 'parallax-js' {
   type CallbackFunction = (...args: any) => any;
@@ -40,24 +40,43 @@ declare module 'parallax-js' {
     version(): string;
 
     relativeInput: boolean;
+
     clipRelativeInput: boolean;
+
     hoverOnly: boolean;
+
     inputElement: null | HTMLElement | string;
+
     calibrateX: boolean;
+
     calibrateY: boolean;
+
     invertX: boolean;
+
     invertY: boolean;
+
     limitX: boolean | number;
+
     limitY: boolean | number;
+
     scalarX: number;
+
     scalarY: number;
+
     frictionX: number;
+
     frictionY: number;
+
     originX: number;
+
     originY: number;
+
     precision: number;
+
     selector: null | string;
+
     pointerEvents: boolean;
+
     onReady: null | CallbackFunction;
   }
 
