@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 
+const getDay = () => {
+  const hours = new Date().getHours();
+  return hours < 19 || hours > 9;
+};
+
 export default function useDayNight() {
-  const getDay = () => {
-    const hours = new Date().getHours();
-    return hours < 19 || hours > 9;
-  };
   const [day, setDay] = useState(getDay());
   const tenMinutes = 600000;
 
