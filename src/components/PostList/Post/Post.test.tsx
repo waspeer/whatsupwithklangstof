@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, render, BoundFunction, GetByBoundAttribute } from '@testing-library/react';
 
+import { BreakpointContext } from '#lib/hooks';
 import { ThemeProvider } from '#lib/theme';
 import { Posts_allPostsYaml_nodes_image as IImage } from '#types/__generated__/Posts';
 
@@ -33,13 +34,21 @@ const url = 'http://omgbv.com';
 jest.mock('gatsby-image', () => 'test-gatsby-image');
 jest.mock('react-parallax-tilt', () => 'test-react-parallax-tilt');
 
-const Providers = ({ children }: { children?: React.ReactNode }) => (
-  <ThemeProvider settings={{ mode: 'light' }}>{children}</ThemeProvider>
+interface ProvidersProps {
+  breakpoint?: string;
+  children?: React.ReactNode;
+  mode?: 'light' | 'dark';
+}
+
+const Providers = ({ breakpoint = 'sm', children, mode = 'light' }: ProvidersProps) => (
+  <ThemeProvider settings={{ mode }}>
+    <BreakpointContext.Provider value={breakpoint}>{children}</BreakpointContext.Provider>
+  </ThemeProvider>
 );
 
 describe('Post', () => {
   let container: HTMLElement;
-  let queryByTestId: any;
+  let getByTestId: BoundFunction<GetByBoundAttribute>;
 
   beforeEach(() => {
     const result = render(<Post image={imageMock} title={title} url={url} />, {
@@ -47,20 +56,20 @@ describe('Post', () => {
     });
 
     container = result.container;
-    queryByTestId = result.queryByTestId;
+    getByTestId = result.getByTestId;
   });
 
   afterEach(cleanup);
 
   it('renders correctly', () => {
-    expect(queryByTestId('post-title')).toHaveTextContent(title);
-    expect(queryByTestId('post')).toHaveAttribute('data-href', url);
+    expect(getByTestId('post-title')).toHaveTextContent(title);
+    expect(getByTestId('post')).toHaveAttribute('data-href', url);
     expect(container.querySelector('test-gatsby-image')).toBeInTheDocument();
   });
 
   it('works as a link', () => {
     window.open = jest.fn();
-    queryByTestId('post').click();
+    getByTestId('post').click();
     expect(window.open).toHaveBeenCalled();
   });
 
@@ -69,6 +78,6 @@ describe('Post', () => {
     window.innerWidth = 500;
     window.dispatchEvent(new Event('resize'));
 
-    expect(queryByTestId('post-title')).toBeVisible();
+    expect(getByTestId('post-title')).toBeVisible();
   });
 });

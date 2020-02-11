@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from '#components/Logo';
-import { useDayNight } from '#lib/hooks';
+import { useDayNight, BreakpointProvider } from '#lib/hooks';
 import { ThemeProvider, GlobalStyle } from '#lib/theme';
 
 const Wrapper = styled.main`
@@ -21,9 +21,11 @@ const Layout = ({ children }: Props) => {
 
   return (
     <ThemeProvider settings={{ mode }}>
-      <GlobalStyle />
-      <Logo />
-      <Wrapper>{children}</Wrapper>
+      <BreakpointProvider>
+        <GlobalStyle />
+        <Logo />
+        <Wrapper>{children}</Wrapper>
+      </BreakpointProvider>
     </ThemeProvider>
   );
 };

@@ -6,7 +6,7 @@ interface ThemeSettings {
   mode: 'light' | 'dark';
 }
 
-export const theme = {
+const theme = {
   colors: {
     backgroundColor: ({ mode }: ThemeSettings) => (mode === 'light' ? '#fff2d3' : '#559cd6'),
     primary: '#ff88d9',

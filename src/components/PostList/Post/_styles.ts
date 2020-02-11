@@ -22,7 +22,7 @@ export const TitleText = withTheme(styled.div`
   color: ${({ theme }) => theme.colors.secondary};
   text-shadow: black 1px -1px;
 
-  @media (max-width: 700px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     font-size: 1.4rem;
   }
 `);
@@ -33,7 +33,7 @@ export const Wrapper = styled.article`
   outline: none;
 `;
 
-export const Tilt = styled(TiltElement)`
+export const Tilt = withTheme(styled(TiltElement)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,25 +51,21 @@ export const Tilt = styled(TiltElement)`
     pointer-events: none;
   }
 
-  :hover {
-    ${TitleWrapper} {
-      opacity: 1;
-      transform: scale(1) translateZ(20px);
-    }
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    :hover {
+      ${TitleWrapper} {
+        opacity: 1;
+        transform: scale(1) translateZ(20px);
+      }
 
-    .gatsby-image-wrapper {
-      filter: blur(2px);
-      transform: scale(0.85);
-    }
-  }
-
-  &.no-image {
-    ${TitleWrapper} {
-      opacity: 1;
+      .gatsby-image-wrapper {
+        filter: blur(2px);
+        transform: scale(0.85);
+      }
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     ${TitleWrapper} {
       opacity: 1;
       transform: none;
@@ -80,4 +76,4 @@ export const Tilt = styled(TiltElement)`
       }
     }
   }
-`;
+`);
