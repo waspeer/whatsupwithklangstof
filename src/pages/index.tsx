@@ -17,7 +17,7 @@ const IndexPage = ({ data }: Props) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="news" />
       <PostList posts={posts} />
     </Layout>
   );

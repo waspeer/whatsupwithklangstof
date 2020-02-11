@@ -2,54 +2,54 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: "what's up with klangstof?",
+    description: 'all the latest and greatest',
+    author: 'klangstof',
   },
   plugins: [
-    `gatsby-plugin-react-helmet-async`,
+    'gatsby-plugin-react-helmet-async',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: "what's up with klangstof?",
+        short_name: 'klangstof news',
+        start_url: '/',
+        background_color: '#ff88d9',
+        theme_color: '#ff88d9',
+        display: 'minimal-ui',
+        icon: 'src/images/icon.png',
       },
     },
-    `gatsby-plugin-typescript`,
+    'gatsby-plugin-typescript',
     {
-      resolve: `gatsby-transformer-yaml-full`,
+      resolve: 'gatsby-transformer-yaml-full',
       options: {
-        path: `./src/posts`,
+        path: './src/posts',
         plugins: [
           {
-            resolve: `gatsby-yaml-full-file`,
+            resolve: 'gatsby-yaml-full-file',
           },
         ],
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `posts`,
+        name: 'posts',
         path: `${__dirname}/src/posts`,
       },
     },
     {
-      resolve: `gatsby-plugin-root-import`,
+      resolve: 'gatsby-plugin-root-import',
       options: {
         '#components': path.join(__dirname, 'src/components'),
         '#lib': path.join(__dirname, 'src/lib'),
