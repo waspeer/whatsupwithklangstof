@@ -66,6 +66,8 @@ export const Tilt = withTheme(styled(TiltElement)`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    transform: none !important;
+
     ${TitleWrapper} {
       opacity: 1;
       transform: none;
