@@ -1,19 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 import { Posts_allPostsYaml_nodes as IPost } from '#types/__generated__/Posts';
 
 import Post from './Post';
 
-const Wrapper = styled.div`
+const Wrapper = withTheme(styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 50%);
   justify-content: center;
 
-  @media (max-width: 700px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     grid-template-columns: 100%;
   }
-`;
+`);
 
 interface Props {
   posts: IPost[];
