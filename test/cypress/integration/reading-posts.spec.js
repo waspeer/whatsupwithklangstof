@@ -7,6 +7,7 @@ describe('reading posts', () => {
   });
 
   it('displays posts on the page with image, title and working links', () => {
+    // all posts have working links, images and titles
     cy.findAllByTestId('post')
       .should('have.length.gt', 0)
       .each((post) => {
@@ -22,5 +23,10 @@ describe('reading posts', () => {
 
         cy.findByTestId('post-title', { container: post }).should('exist');
       });
+
+    // title should be visible by default on small screens
+    cy.viewport('iphone-6')
+      .findAllByTestId('post-title')
+      .should('be.visible');
   });
 });
