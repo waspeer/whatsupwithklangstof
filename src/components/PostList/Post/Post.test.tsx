@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
 import React from 'react';
-import { cleanup, render, QueryByBoundAttribute } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 
 import { ThemeProvider } from '#lib/theme';
 import { Posts_allPostsYaml_nodes_image as IImage } from '#types/__generated__/Posts';
@@ -62,5 +64,11 @@ describe('Post', () => {
     expect(window.open).toHaveBeenCalled();
   });
 
-  it.todo('displays the title by default on small screens');
+  it('displays the title by default on small screens', () => {
+    // @ts-ignore
+    window.innerWidth = 500;
+    window.dispatchEvent(new Event('resize'));
+
+    expect(queryByTestId('post-title')).toBeVisible();
+  });
 });
