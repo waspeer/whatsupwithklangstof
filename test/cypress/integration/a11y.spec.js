@@ -5,7 +5,7 @@ describe('accessibility', () => {
   beforeEach(() => {
     cy.visit('/')
       .injectAxe()
-      .waitForRouteChange();
+      .get('main');
   });
 
   it('should have no detectable a11y violations on load', () => {

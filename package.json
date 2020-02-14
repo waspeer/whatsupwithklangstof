@@ -49,7 +49,6 @@
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-cypress": "^2.9.0",
     "eslint-plugin-import": "^2.20.0",
-    "gatsby-cypress": "^0.2.22",
     "jest": "^25.1.0",
     "poetic": "^1.4.0",
     "start-server-and-test": "^1.10.8",
@@ -80,9 +79,9 @@
     "graphql:generate-types": "apollo codegen:generate src/types/__generated__/ -c=apollo-config.js  --outputFlat --target=typescript",
     "serve": "gatsby serve -p 8000",
     "start": "yarn develop",
-    "deploy": "yarn build && surge public whatsupwith.klangstof.com",
+    "deploy": "surge public whatsupwith.klangstof.com",
     "test:e2e:dev": "CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e": "CYPRESS_SUPPORT=y yarn build && start-server-and-test serve http://localhost:8000 cy:run",
+    "test:e2e": "start-server-and-test serve http://localhost:8000 cy:run",
     "test:unit": "jest"
   },
   "repository": {

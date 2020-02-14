@@ -42,6 +42,10 @@ jobs:
           command: yarn code:lint
 
       - run:
+          name: Build
+          command: yarn build
+
+      - run:
           name: Unit tests
           command: yarn test:unit
 

@@ -3,7 +3,7 @@
 
 describe('reading posts', () => {
   before(() => {
-    cy.visit('/').waitForRouteChange();
+    cy.visit('/').get('main');
   });
 
   it('displays posts on the page with image, title and working links', () => {
