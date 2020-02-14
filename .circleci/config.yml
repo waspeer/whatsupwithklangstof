@@ -34,6 +34,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
+            - ~/.cache
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
@@ -50,4 +51,4 @@ jobs:
 
       - run:
           name: Deployment
-          command: yarn surge
+          command: yarn deploy
