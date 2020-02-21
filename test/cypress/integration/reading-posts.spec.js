@@ -13,6 +13,7 @@ describe('reading posts', () => {
       .each((post) => {
         cy.wrap(post)
           .should('have.attr', 'data-href')
+          .should('include', 'http')
           .then((url) => {
             cy.request(url);
           });
