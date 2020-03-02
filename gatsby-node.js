@@ -10,7 +10,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   const typeDefs = `
     type PostsYaml implements Node {
-      date: Date!
+      date: Date! @dateformat(formatString: "x")
       image: FileYaml!
       title: String!
       url: String!
