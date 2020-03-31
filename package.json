@@ -51,7 +51,7 @@
     "eslint-plugin-import": "^2.20.0",
     "jest": "^25.1.0",
     "poetic": "^1.4.0",
-    "start-server-and-test": "^1.10.8",
+    "start-server-and-test": "^1.10.11",
     "surge": "^0.21.3",
     "typescript": "^3.7.5"
   },
