@@ -39,7 +39,7 @@
     "@types/react-helmet": "^5.0.15",
     "@types/styled-components": "^4.4.2",
     "@types/styled-theming": "^2.2.2",
-    "axe-core": "^3.5.0",
+    "axe-core": "^3.5.2",
     "babel-jest": "^25.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-gatsby": "^0.2.27",
