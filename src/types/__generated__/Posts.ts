@@ -28,7 +28,7 @@ export interface Posts_allPostsYaml_nodes_image_base {
 }
 
 export interface Posts_allPostsYaml_nodes_image {
-  __typename: 'FileYaml';
+  __typename: 'ImageSharp';
   base: Posts_allPostsYaml_nodes_image_base | null;
 }
 
