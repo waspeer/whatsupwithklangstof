@@ -39,12 +39,10 @@
     "@types/react-helmet": "^6.0.0",
     "@types/styled-components": "^5.1.0",
     "@types/styled-theming": "^2.2.3",
-    "axe-core": "^3.5.4",
     "babel-jest": "^26.0.1",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-gatsby": "^0.4.9",
     "cypress": "4.8.0",
-    "cypress-axe": "^0.8.1",
     "eslint": "^7.2.0",
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-cypress": "^2.11.1",
@@ -52,7 +50,6 @@
     "jest": "^26.0.1",
     "poetic": "^1.5.0",
     "start-server-and-test": "^1.11.0",
-    "surge": "^0.21.3",
     "typescript": "^3.9.5"
   },
   "keywords": [
