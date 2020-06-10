@@ -6,7 +6,7 @@ import { BreakpointContext } from './hooks';
 import { ThemeProvider } from './theme';
 
 export const imageMock: IImage = {
-  __typename: 'FileYaml',
+  __typename: 'ImageSharp',
   base: {
     __typename: 'File',
     childImageSharp: {
