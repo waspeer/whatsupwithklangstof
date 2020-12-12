@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>news | klangstof</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://d1fdloi71mui9q.cloudfront.net/nEzEBpXPSOOLr7TVW7PA_7Iaxz3Oa9i010ynu"
+      />
+      <h1>@klangstof</h1>
+    </header>
+    <main>
+      <ul class="links">
+        {% for link in links %}
+        <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </main>
+  </body>
+</html>
