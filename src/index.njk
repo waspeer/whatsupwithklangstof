@@ -10,7 +10,8 @@
   <body>
     <header>
       <img
-        src="https://d1fdloi71mui9q.cloudfront.net/nEzEBpXPSOOLr7TVW7PA_7Iaxz3Oa9i010ynu"
+        alt="Klangstof"
+        src="/images/avatar.jpg"
       />
       <h1>@klangstof</h1>
     </header>
@@ -24,7 +25,7 @@
       <ul class="socials">
         {% for social in socials %}
         <li>
-          <a href="{{ social.url }}">
+          <a href="{{ social.url }}" title="{{ social.name }}">
             {% FontAwesomeIcon name=social.icon, type="brand" %}
           </a>
         </li>

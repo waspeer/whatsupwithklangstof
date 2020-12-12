@@ -117,3 +117,5 @@ dist
 
 _site/
 .vscode/snipsnap.code-snippets
+# Local Netlify folder
+.netlify
