@@ -1,8 +1,26 @@
 body,
 html {
-  margin: 1rem;
+  margin: 0.5rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  --color-1: #569cd5;
+  --color-2: #fff395;
+  --color-3: #d8a3e1;
+  --shadow: #242424;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
 }
 
 header {
@@ -28,20 +46,38 @@ main {
 
 .links {
   text-align: center;
-  margin: 0;
-  padding: 0;
 }
 
 .links li {
-  background: pink;
-  border: pink 2px solid;
   border-box: padding-box;
-  list-style: none;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: var(--shadow) 3px 3px;
   margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.links li:nth-child(3n + 1) {
+  background: var(--color-1);
+  border-color: var(--color-1);
+}
+
+.links li:nth-child(3n + 2) {
+  background: var(--color-2);
+  border-color: var(--color-2);
+}
+
+.links li:nth-child(3n + 3) {
+  background: var(--color-3);
+  border-color: var(--color-3);
+}
+
+.links li:hover {
+  box-shadow: var(--shadow) 4px 4px;
+  transform: translate(-1px, -1px);
 }
 
 .links a {
-  color: inherit;
   display: block;
   padding: 1rem;
   text-decoration: none;
@@ -50,4 +86,16 @@ main {
 
 .links a:hover {
   background: white;
+}
+
+.socials {
+  display: flex;
+  font-size: 1rem;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.socials svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Facebook",
+    "url": "https://www.facebook.com/klngstf/",
+    "icon": "facebook-square"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/klangstof/",
+    "icon": "instagram-square"
+  },
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/klangstof",
+    "icon": "twitter-square"
+  }
+]

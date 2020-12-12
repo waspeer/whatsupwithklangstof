@@ -19,6 +19,16 @@
         <li><a href="{{ link.url }}">{{ link.name }}</a></li>
         {% endfor %}
       </ul>
+
+      <ul class="socials">
+        {% for social in socials %}
+        <li>
+          <a href="{{ social.url }}">
+            {% FontAwesomeIcon name=social.icon, type="brand" %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
     </main>
   </body>
 </html>

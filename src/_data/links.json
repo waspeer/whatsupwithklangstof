@@ -1,10 +1,26 @@
 [
   {
-    "name": "Limited Edition Vinyl",
+    "name": "Klang Store",
+    "url": "https://store.klangstof.com/"
+  },
+  {
+    "name": "Limited Edition Vinyl (Yellow!)",
     "url": "https://www.platomania.nl/album/7520987/the-noise-you-make-is-silent/klangstof"
+  },
+  {
+    "name": "Subscribe to our mailinglist for exclusive content",
+    "url": "https://mailchi.mp/745846ad8247/klngstfmailinglist"
+  },
+  {
+    "name": "Tourdates",
+    "url": "http://www.klangstof.com/tour"
   },
   {
     "name": "Listen to Klangstof",
     "url": "https://open.spotify.com/album/0dGBHdcr9u2ZlVkAWSRkwt?si=Fw3VOaULTYaq25divYqtwg"
+  },
+  {
+    "name": "Website",
+    "url": "http://www.klangstof.com/"
   }
 ]
