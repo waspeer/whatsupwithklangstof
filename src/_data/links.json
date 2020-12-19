@@ -21,12 +21,12 @@
       "url": "http://www.klangstof.com/tour"
     },
     {
-      "name": "Listen to Klangstof",
-      "url": "https://open.spotify.com/album/0dGBHdcr9u2ZlVkAWSRkwt?si=Fw3VOaULTYaq25divYqtwg"
-    },
-    {
       "name": "Website",
       "url": "http://www.klangstof.com/"
+    },
+    {
+      "name": "Listen to Klangstof",
+      "url": "https://open.spotify.com/album/0dGBHdcr9u2ZlVkAWSRkwt?si=Fw3VOaULTYaq25divYqtwg"
     }
   ]
 }
