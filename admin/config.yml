@@ -6,6 +6,8 @@ public_folder: /images/uploads
 collections:
   - name: content
     label: Content
+    editor:
+      preview: false
     files:
       - name: links
         label: Links
